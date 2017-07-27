@@ -20,7 +20,7 @@ import org.junit.runner.RunWith;
 import org.xml.sax.SAXException;
 
 /**
- * @author Arun Gupta
+ * @author Dipendu Singh
  */
 @RunWith(Arquillian.class)
 public class SimpleServletTest {
@@ -45,13 +45,13 @@ public class SimpleServletTest {
     @Test
     public void testGet() throws IOException, SAXException {
         TextPage page = webClient.getPage(base + "SimpleServlet");
-        assertEquals("my GET", page.getContent());
+        assertEquals("Get Method", page.getContent());
     }
 
     @Test
     public void testPost() throws IOException, SAXException {
         WebRequest request = new WebRequest(new URL(base + "SimpleServlet"), HttpMethod.POST);
         TextPage page = webClient.getPage(request);
-        assertEquals("my POST", page.getContent());
+        assertEquals("Post Method", page.getContent());
     }
 }
